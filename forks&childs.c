@@ -9,10 +9,10 @@ int main()
 
   pid = getpid();
   printf("pid1 PID: %d\n", pid);
-  printf("-----------------------------1\n");
+  printf("-----------------------------\n");
   pid = getppid();
   printf("pid1 PPID: %d\n", pid);
-  printf("-----------------------------2\n\n");
+  printf("-----------------------------\n\n");
 
   pid = fork(); //prints all the parent PIDs
 
@@ -30,7 +30,10 @@ int main()
 
   } else { /* parent process */
     /* parent will wait for the child to complete */
-    for (int i=11; i<50; i++) { printf("%d ",10*i); fflush(stdout); }
+    for (int i=11; i<50; i++) {
+      printf("%d ",10*i);
+      fflush(stdout);
+    }
     wait(NULL);
     pid2 = fork();
     pid2 = fork();
